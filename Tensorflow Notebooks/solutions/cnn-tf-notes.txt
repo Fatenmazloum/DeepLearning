@@ -124,3 +124,9 @@ x_test[0] is just one image with shape (32, 32, 3)
 But Keras expects a batch — even if it's just one sample.
 
 So the shape should be (1, 32, 32, 3) (with an extra dimension for batch size).
+
+- solution example: Add the image to a batch where it's the only member.
+img = (np.expand_dims(img,0))
+so if img is gray scale with shape(32,32,1) becomes(1,32,32,1) 
+
+
