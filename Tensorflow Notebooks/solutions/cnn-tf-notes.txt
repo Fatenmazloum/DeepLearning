@@ -116,3 +116,11 @@ Smaller Model
 - The model.compile() function in Keras configures the model for training. It tells the model how to learn, how to measure performance, and how to update weights during training.
 
 - Validation_data argument in model.fit() is used to evaluate how well the model performs on unseen data after each training epoch. 
+
+- ❌ model.predict(x_test[0]) fails or gives a warning because:
+
+x_test[0] is just one image with shape (32, 32, 3) 
+
+But Keras expects a batch — even if it's just one sample.
+
+So the shape should be (1, 32, 32, 3) (with an extra dimension for batch size).
