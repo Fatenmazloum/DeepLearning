@@ -129,4 +129,30 @@ So the shape should be (1, 32, 32, 3) (with an extra dimension for batch size).
 img = (np.expand_dims(img,0))
 so if img is gray scale with shape(32,32,1) becomes(1,32,32,1) 
 
+- Activation function is a mathematical function applied to the output to make it meaningfull:
+
+Softmax applied to the ouput in case of multiclass(0,1,2,3..) 
+
+Sigmoid applied to the output in case of Binary classification(0 or 1) where  it makes the output ranges between 0 and 1 .
+
+Relu applied to hidden layers makes the output between 0 and plus infinity..
+
+Tanh makes the output ranges between -1 and 1
+
+-Loss or error is how far the predicted value from actual value :
+
+In regresiion case loss=MSE
+
+In Binary classification, loss= Binary crossentropy
+
+In multiclass classification, loss=Sparsecategoricalcrossentropy
+
+- Perceptron is the building block of neural network.(neuron ,layer,bias,weight , activation function)( input layer.... output layer)
+
+-MLP (input layer...hidden....output)
+
+-We use gradiant to update weights, minimize error and improve performance in back propagation.
+
+
+
 
