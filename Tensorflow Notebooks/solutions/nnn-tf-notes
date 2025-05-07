@@ -1,0 +1,112 @@
+- The aim of this exercise is to build a CNN deep learning model that helps classify images. We will build and train it to be able to detect any image later on.
+
+- In CNN (Convolutional Neural Network) projects, we commonly use the TensorFlow framework — especially with its high-level API tf.keras
+
+- Tensor flow is the deeplearning framework and keras is the tool to build deeplearning model
+
+- In cifar10 dataset xtrain is the images featutres and y the label for each image no need to separate data into x and y before splitting.
+
+- Cifar10 dataset we can use it for image classification it has 60000 images and each image is RGB with 32*32pixels
+
+- How to build CNN :
+
+Convolutional Layers extract features (like edges, textures) from the image.
+
+Pooling Layers reduce the size of the feature map and focus on the most important features.
+
+Flatten Layer converts the 2D feature map into a 1D vector.
+
+Dense Layers make final predictions, with the last dense layer producing class probabilities.
+
+- CNN is a special kind of MLP
+
+- 32 filters means you're learning 32 different features from the image.
+
+- The 3x3 filter size means each filter looks at a 3x3 region of the image at a time.
+
+- Convolution is the process of sliding the filter across the image and computing the feature map that highlights the learned features (like edges, shapes, etc.).
+
+- Filters in cnn like magnigying glass looks small patches in picture to detect features(edge,corne,shape..)
+
+- conv2D zoom in to detect features and maxpooling zoomout to reduce the size and retain the most important features.
+
+- last dense is 10 because we have 10 classess the first neuron for class 0 .... and we apply softmax in multiclass cassificcation makig the numbers probabilstics where if neuron 3 have the biggest number (0.6) so this image belongs to class 3 either sotmax or in loss choose (sparse-categorica-croosentropy and type logits = True). In binary classification loss is binary crossentropy where as in multiclass classification Sparse-categorical-cross... / In regression case (loss= MSE).
+
+- The optimizer update the weights to minimize error and improve performance using gradiant descents(in MLP where we have back propagation). Gradiant descents clc the rate of change of output.
+
+- accuracy number of correct predictions/totalnumber of predictions.
+
+- loss is error how far the predicted value from actal value.
+
+- precison measures how many of the predicted positive cases are actually positive.
+
+- recall meausurse how many of the actaully positive are correctly predicted as positive .
+
+- If you don’t specify batch_size, Keras uses 32 by default.
+
+-During the first epoch, 32 training images are fed into the model at a time (in batches). The model predicts their labels and compares them to the actual values. This process constitutes training, and the model updates its weights after each batch. This continues until all training images have been processed, completing the first epoch.
+
+- For evaluation, after each epoch, 32 test images are also entered into the model at a time (in batches). The model predicts their labels and compares them to the actual values. Once all test images have been processed, the model reports the overall validation accuracy and loss.
+
+- Training: update weights after each batch.
+
+- Validation: evalate metrices after each batch but d  ot update weights
+
+- At the end of each epoch, you get the final training and validation loss/accuracy logged.
+
+✅ Good Training (No Underfitting)
+Training Accuracy increases over epochs.
+
+Training Loss decreases over epochs.
+
+➡️ This means the model is learning from the training data.
+
+✅ Good Validation (No Overfitting)
+Validation Accuracy increases or is stable.
+
+Validation Loss decreases or is stable.
+
+➡️ This shows the model is generalizing well to unseen data.
+
+❗ Overfitting Detection (What to Compare)
+Look at the last epoch:
+
+1. Training Accuracy vs Validation Accuracy
+If Training Accuracy ≫ Validation Accuracy, overfitting is likely.
+
+2. Training Loss vs Validation Loss
+If Training Loss ≪ Validation Loss, overfitting is likely.
+
+- Ways to Reduce Overfitting (in simple words):
+
+Dropout
+
+➤ Randomly turns off some parts of the model during training
+
+➤ Helps the model not depend too much on certain parts
+
+Early Stopping
+
+➤ Stops training when the model stops getting better on test data
+
+➤ Avoids training too much and memorizing
+
+Data Augmentation
+
+➤ Changes training pictures (flip, zoom, rotate, etc.)
+
+➤ Gives the model more variety to learn from
+
+L2 Regularization (Weight Penalty)
+
+➤ Punishes large numbers in the model
+
+➤ Keeps the model simple and clean
+
+Smaller Model
+
+➤ Use fewer layers or fewer neurons
+
+➤ Less chance to memorize training data
+
+- For overfitting reduce ephocs or features anf for underfitting increase features and ephocs
