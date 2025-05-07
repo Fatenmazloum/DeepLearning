@@ -18,6 +18,8 @@ Flatten Layer converts the 2D feature map into a 1D vector.
 
 Dense Layers make final predictions, with the last dense layer producing class probabilities.
 
+Activation functions (like ReLU, softmax) are only used in layers that learn or make predictions (e.g., Conv2D, Dense).
+
 - CNN is a special kind of MLP
 
 - 32 filters means you're learning 32 different features from the image.
