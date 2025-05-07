@@ -112,3 +112,7 @@ Smaller Model
 ➤ Less chance to memorize training data
 
 - For overfitting reduce ephocs or features anf for underfitting increase features and ephocs
+
+- The model.compile() function in Keras configures the model for training. It tells the model how to learn, how to measure performance, and how to update weights during training.
+
+- Validation_data argument in model.fit() is used to evaluate how well the model performs on unseen data after each training epoch. 
